@@ -59,16 +59,6 @@ function validatePw(text) {
 }
 
 
-function loginCheck(event) {
-  event.preventDefault();
-
-  if (idInput.value === user.id && pwInput.value === user.pw) {
-    window.location.href = 'welcome.html';
-  } else {
-    alert('아이디 또는 비밀번호가 일치하지 않습니다.')
-  }
-}
-
 loginB.addEventListener('click', loginCheck);
 
 idInput.addEventListener('keyup', validateIdInput);
@@ -83,4 +73,15 @@ function validateIdInput(event) {
 function validatePwInput(event) {
   const password = event.target.value;
   validatePw(password);
+}
+
+
+function loginCheck(event) {
+  event.preventDefault();
+
+  if (idInput.value === user.id && pwInput.value === user.pw) {
+    window.location.href = 'welcome.html';
+  } else {
+    alert('아이디 또는 비밀번호가 일치하지 않습니다.')
+  }
 }
