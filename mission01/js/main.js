@@ -60,9 +60,8 @@ function validatePw(text) {
 
 
 loginB.addEventListener('click', loginCheck);
-
-idInput.addEventListener('keyup', validateIdInput);
-pwInput.addEventListener('keyup', validatePwInput);
+idInput.addEventListener('input', validateIdInput);
+pwInput.addEventListener('input', validatePwInput);
 
 
 function validateIdInput(event) {
