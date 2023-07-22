@@ -28,7 +28,11 @@ function backGroundColor(node, value) {
   node.style.background = value;
 }
 
+function textName(node, text) {
+  if (!text || typeof text !== "string") {
+    throw new TypeError("textName 함수의 인수는 문자열이어야 합니다.");
+  }
 
-
-
+  node.textContent = text;
+}
 
