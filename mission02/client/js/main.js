@@ -36,3 +36,18 @@ function textName(node, text) {
   node.textContent = text;
 }
 
+function posterImg(node, imageName, altPath) {
+  if (typeof node === "string") node = getNode(node);
+
+  if (!node) return;
+
+  const imagePath = `./assets/${imageName.toLowerCase()}.jpeg`;
+
+  attr(node, "src", imagePath);
+  attr(node, "alt", altPath);
+}
+
+
+
+
+
