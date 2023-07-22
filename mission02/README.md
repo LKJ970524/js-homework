@@ -7,12 +7,12 @@ elemental movie poster는 썸네일 이미지를 클릭하면 메인 이미지�
 3. 클릭한 포스터가 메인포스터로 변경되게한다.
 
 
-### 🌪완성된 페이지 모습
+## 🌪완성된 페이지 구현 GIF
+![ezgif com-video-to-gif](https://github.com/LKJ970524/js-homework/assets/115642699/bb28a456-ce02-4c19-9fa3-3c8ff3311b54)
 
 
 
-
-## 🌪함수
+## 🌪코드(code)
 ### backGroundColor(배경색 캐릭터에 맞게 변경)
 ```js
 function backGroundColor(node, value) {
@@ -53,3 +53,34 @@ function posterImg(node, imageName, altPath) {
 }
 ```
 #### `posterImg` 함수를 만들고 사용해서 캐릭터를 클릭시 해당 캐릭터의 포스터가 표기됩니다. 
+
+
+### 이벤트실행함수
+```js
+function handleMoviePoster(e) {
+  const target = e.target.closest("li");
+  const index = attr(target, "data-index");
+  const nickName = getNode(".nickName");
+  const selectedMovie = data[index - 1];
+  const { name, color, alt } = selectedMovie;
+  const gradientColor = `linear-gradient(to bottom, ${color[0]}, ${color[1]})`;
+  
+  if (!target || !index) return;
+
+  navItems.forEach((li) => removeClass(li, "is-active"));
+  addClass(target, "is-active");
+
+  backGroundColor("body", gradientColor);
+  textName(nickName, name);
+  posterImg(visualImage, name, alt);
+
+}
+
+
+
+nav.addEventListener("click", handleMoviePoster);
+```
+#### `handleMoviePoster` 이벤트함수를 만들어서 로직이 작동하게 했습니다.
+
+## ✒과제를 진행하며 느낀점✒
+이번과제도 어찌저찌 끝냈지만 어렵고 정말어렵고 매우어렵고, 아직도 이해를 못하는부분이 많습니다. 인터넷을 찾아보고 수업시간에 진행한 코드들을 보며 로직을 만들어보긴했지만 설명과 이해가 많이 부족합니다.....  더 많은 공부와 복습을 하겠습니다.........

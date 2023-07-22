@@ -16,7 +16,24 @@ const nav = getNode(".nav");
 const navItems = getNodes(".nav li");
 const visualImage = getNode(".visual img ");
 
+function handleMoviePoster(e) {
+  const target = e.target.closest("li");
+  const index = attr(target, "data-index");
+  const nickName = getNode(".nickName");
+  const selectedMovie = data[index - 1];
+  const { name, color, alt } = selectedMovie;
+  const gradientColor = `linear-gradient(to bottom, ${color[0]}, ${color[1]})`;
+  
+  if (!target || !index) return;
 
+  navItems.forEach((li) => removeClass(li, "is-active"));
+  addClass(target, "is-active");
+
+  backGroundColor("body", gradientColor);
+  textName(nickName, name);
+  posterImg(visualImage, name, alt);
+
+}
 
 function backGroundColor(node, value) {
   if (typeof node === "string") node = getNode(node);
@@ -51,3 +68,4 @@ function posterImg(node, imageName, altPath) {
 
 
 
+nav.addEventListener("click", handleMoviePoster);
