@@ -15,7 +15,8 @@
 
 
 
-
-
-
+const nickName = getNode(".nickName");
+const nav = getNode(".nav");
+const navItems = getNodes(".nav li");
+const visualImage = getNode(".visual img ");
 
