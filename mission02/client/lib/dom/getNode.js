@@ -1,5 +1,4 @@
 
-// '.first'
 function getNode(node){
   
   if(typeof node !== 'string'){
@@ -9,7 +8,7 @@ function getNode(node){
   return document.querySelector(node);
 }
 
-
+//^ 여러 요소를 잡을 경우
 function getNodes(node){
 
   if(typeof node !== 'string'){

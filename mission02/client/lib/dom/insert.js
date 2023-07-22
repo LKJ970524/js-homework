@@ -34,13 +34,3 @@ function insertAfter(node,text){
   }
   node.insertAdjacentHTML('afterend',text);
 }
-
-
-// TDD
-
-
-
-// beforebegin => insertBefore
-// afterbegin  => insertFirst
-// beforeend   => insertLast
-// afterend    => insertAfter
