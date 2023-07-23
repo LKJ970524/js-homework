@@ -17,17 +17,17 @@ const navItems = getNodes(".nav li");
 const visualImage = getNode(".visual img ");
 
 function handleMoviePoster(e) {
-  const target = e.target.closest("li");
-  const index = attr(target, "data-index");
+  const list = e.target.closest("li");
+  const index = attr(list, "data-index");
   const nickName = getNode(".nickName");
   const selectedMovie = data[index - 1];
   const { name, color, alt } = selectedMovie;
   const gradientColor = `linear-gradient(to bottom, ${color[0]}, ${color[1]})`;
   
-  if (!target || !index) return;
+  if (!list || !index) return;
 
   navItems.forEach((li) => removeClass(li, "is-active"));
-  addClass(target, "is-active");
+  addClass(list, "is-active");
 
   backGroundColor("body", gradientColor);
   textName(nickName, name);
